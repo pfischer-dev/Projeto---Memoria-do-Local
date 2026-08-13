@@ -132,7 +132,7 @@ app.get("/consulta", async (req, res) => {
             break;
     }
 });
-
+/* teste */
 app.listen(port, () => {
     console.log(`Listenning on port ${port}`);
 });
