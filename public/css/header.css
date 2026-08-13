@@ -1,0 +1,130 @@
+header {
+    width: 100%;
+    height: 100%;
+    background-color: var(--bg-card);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    
+    
+
+    .logo {
+        width: 310px;
+        min-height: 100%;
+        display: flex;
+        align-items: center;
+        gap: .2rem;
+        background: var(--bg-main);
+        border: none;
+        padding: .6rem;
+        
+    
+        .logo_IMG {
+            img {
+                width: 45px;
+                height: 45px; 
+            }
+        }
+    
+        .logo_title {
+            text-align: center;
+            text-transform: uppercase;
+            h2 {
+                color: var(--text-primary);
+                font-family: var(--font-title);
+                font-size: clamp(1.2rem, 3vw, 1.4rem);
+                margin: 0;
+            }
+            h3 {
+                color: var(--text-secondary);
+                font-family: var(--font-title);
+                font-size: clamp(.8rem, 2vw, .9rem);
+                margin: 0;
+            }
+        }
+    }
+    .navbar {
+        display: none;
+        flex-direction: column;
+        justify-content: end;
+        gap: 1rem;
+        margin-left: auto;
+        background-color: rgba(71, 70, 70, 0.16);
+        width: 100px;
+        
+        a {
+            display: flex;
+            align-items: center;
+            padding: 0.5rem;
+            text-decoration: none;
+            color: var(--color-primary-dark);
+            font-family: var(--font-text);
+    
+            &:hover {
+                color: var(--color-secondary);
+                background: rgba(0, 0, 0, 0.063);
+            }
+        }
+    
+        &.active {
+            display: block;
+            position: absolute;
+            right: 0;
+            top: 65px;
+            border: 1px solid rgba(0, 0, 0, 0.158);
+            border-radius: 2px;
+            border-bottom: 1px solid rgba(34, 34, 34, 0.476);
+            z-index: 10;
+        }
+    }
+    .menu_burger {
+        margin-left: auto;
+        cursor: pointer;
+    padding: 0.5rem;    
+}
+    .dark_mode {
+        padding: 0.5rem;;
+    }
+}
+
+
+
+
+
+/* Responsive Header DESKTOP */
+@media(min-width: 768px) {
+    header {
+        width: 100%;
+        height: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+
+        .logo {
+            
+        }
+
+        .navbar {
+            display: flex;
+            flex-direction: row;
+            background-color: transparent;
+            margin-right: 1rem;
+            
+            a {
+                font-size: var(--fs-body);
+                color: var(--color-primary-dark);
+                opacity: 1;
+            }
+        }
+
+        .menu_burger {
+            display: none;
+        }
+        .dark_mode {
+            padding: 1rem;
+        }
+    }
+    
+}

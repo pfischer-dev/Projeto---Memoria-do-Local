@@ -1,0 +1,107 @@
+.patrimonioHistorico {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    border: 1px solid var(--border-color);
+    
+    .patrimonio_title {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin: 0.5rem;
+
+        img {
+            width: 30px;
+            height: 30px;
+
+        }
+        
+    }
+
+    .patrimonio_content {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;    
+        
+        padding: 0.5rem;
+        .local_card {
+            display: grid;
+            grid-template-rows: 1fr .5fr;
+            justify-content: start;
+            align-items: start;
+            
+
+            img {
+                border-radius: 14px;
+                border-bottom-right-radius: 0;
+                border-bottom-left-radius: 0;
+                width: 100%;
+                height: 200px;
+                object-fit: cover;
+            }
+            
+            .card_content {
+                padding: 0.5rem;
+                height: 100%;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: start;
+                gap: 1rem;
+                text-align: center;
+                background-color: var(--bg-main);
+                border-radius: 14px;
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+
+
+                .card_title {
+                    .card_description {
+                        color: blue;
+                        border: 1px solid green;
+                    }
+                }
+            }
+        }
+        
+        
+    }
+}
+
+@media (min-width: 1000px) {
+    .patrimonioHistorico {
+        .patrimonio_content {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: none;
+            align-items: stretch;
+            justify-content: center;
+            text-align: center;
+            padding: 1rem;
+            
+            .local_card {
+                grid-template-rows: unset;
+                grid-template-columns: 1fr 1fr;
+                
+    
+                img {
+                    width: 100%;
+                    height: 100%;
+                    border-top-right-radius: 0px;
+                    border-bottom-left-radius: 14px; 
+                    object-fit: cover;
+                }
+                .card_content {
+                    border-top-left-radius: 0px;
+                    border-bottom-left-radius: 0px;
+                    border-top-right-radius: 14px;
+                }
+            }
+        }
+    }
+}

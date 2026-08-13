@@ -1,0 +1,41 @@
+<% if(locals.error) { %>
+    <%= error %>
+<% } else { %>
+    <% if(localHistorico) { %>
+        <section class="antesAgora">
+
+            <div class="antesAgora_title">
+                <img src="/images/icons/lightbulb_secondaryColor.png" alt="">
+                <h3>Antes e Agora</h3>
+            </div>
+            
+            <div class="antesAgora_cards">
+                
+                <figure class="antesAgora_leftCard">
+                    
+                    <%- include("../components/comparacaoHistorica") %>
+                    
+                    <figcaption>Arraste o controle para ver a transformação ao longo do tempo</figcaption>
+                </figure>
+                
+                <div class="antesAgora_rightCard">
+                    <div class="curiosidade_title">
+                        <img src="/images/icons/lightbulb_secondaryColor.png" alt="desenho lampada">
+                        <h3>Curiosidade</h3>
+                    </div>
+                    <div class="curiosidade_description">
+                        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Assumenda dolore quas quo placeat numquam eaque. Accusantium saepe est maxime, animi corrupti recusandae debitis, alias, consectetur dolores temporibus eaque repellat sunt?</p>
+                    </div>
+                    <div class="curiosidade_verMais">
+                        <a href="#">Ver Mais Curiosidades</a>
+                        <img src="/images/icons/right-arrow.png" alt="">
+                    </div>
+        
+                </div>
+        
+            </div>
+        
+        </section>
+    <% } %>
+<% } %>
+

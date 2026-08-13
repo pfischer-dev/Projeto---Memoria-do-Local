@@ -1,0 +1,24 @@
+<% if(locals.error) { %>
+    <%= error %>
+<% } else { %>
+    <% if(localHistorico) { %>
+        <section class="footer">
+            <div class="footer_title">
+                <img src="/images/icons/fonteBiblio2.png" alt="">
+                <h3>Referências</h3>
+                <div class="footer_msg">
+                    <p>Dados e informações obtidos a partir de fontes públicas e confiáveis</p>
+                </div>
+            </div>
+            
+            <div class="footer_fontes">
+                <img src="/images/logo_wikipedia.png" alt="">
+                <img src="/images/logo_ibge.png" alt="">
+                <img src="/images/logo_viaCep.png" alt="">
+                <img src="/images/logo_iphan.png" alt="">
+                <img src="/images/logo_arquivoNacional.png" alt="">
+            </div>
+        </section>
+    <% } %>
+<% } %>
+

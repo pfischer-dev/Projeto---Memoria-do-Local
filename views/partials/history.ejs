@@ -1,0 +1,28 @@
+<% if(locals.error) { %>
+    <%= error %>
+<% } else { %>
+    <% if(localHistorico) { %>
+        <section class="history">
+
+            
+            <!-- left CARD -->
+            <div class="history_leftCard">
+                <div class="history_title">
+                    <img src="/images/icons/book.png" alt="">
+                    <h3>História</h3>
+                </div>
+                <p class="history_description"><%= localHistorico.historia.resumo %></p>
+                <div class="history_leiaMais">
+                    <h4>Leia Mais</h4>
+                    <img src="/images/icons/right-arrow.png" alt="seta para a direita do link leia mais">
+                </div>
+            </div>
+            <!-- right CARD -->
+            <div class="history_rightCard">
+                <img src="/images/praçadase.jpeg" alt="">
+            </div>
+        </section>
+    <% } %>
+<% } %>
+
+

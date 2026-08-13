@@ -1,0 +1,92 @@
+:root {
+    /* ==========================
+    CORES PRINCIPAIS
+    ========================== */
+
+    --color-primary: #2F4F3E;
+    --color-primary-dark: #22372B;
+    --color-secondary: #B08D57;
+
+    /* ==========================
+    BACKGROUNDS
+    ========================== */
+
+    --bg-main: #F7F3EC;
+    --bg-card: #FCFAF7;
+    --bg-dark: #121212;
+
+    /* ==========================
+    TEXTOS
+    ========================== */
+
+    --text-primary: #2B2B2B;
+    --text-secondary: #666666;
+    --text-light: #FCFAF7;
+
+    /* ==========================
+    BORDAS
+    ========================== */
+
+    --border-color: #E8E2D8;
+
+    /* ==========================
+    SOMBRAS
+    ========================== */
+
+    --shadow-sm: 0 4px 10px rgba(0,0,0,.05);
+    --shadow-md: 0 10px 30px rgba(0,0,0,.06);
+    --shadow-lg: 0 20px 50px rgba(0,0,0,.10);
+
+    /* ==========================
+    BORDER RADIUS
+    ========================== */
+
+    --radius-sm: 8px;
+    --radius-md: 14px;
+    --radius-lg: 18px;
+    --radius-xl: 30px;
+
+    /* ==========================
+    ESPAÇAMENTOS
+    ========================== */
+
+    --space-xs: 8px;
+    --space-sm: 16px;
+    --space-md: 24px;
+    --space-lg: 32px;
+    --space-xl: 48px;
+    --space-2xl: 64px;
+    --space-3xl: 96px;
+
+    /* ==========================
+    FONTES
+    ========================== */
+
+    --font-title: "Playfair Display", serif;
+    --font-text: "Manrope", sans-serif;
+
+    /* ==========================
+    TAMANHOS DE FONTE
+    ========================== */
+
+    --fs-display: 72px;
+    --fs-h1: 52px;
+    --fs-h2: 36px;
+    --fs-h3: 26px;
+    --fs-body: 18px;
+    --fs-small: 14px;
+
+    /* ==========================
+    TRANSIÇÕES
+    ========================== */
+
+    --transition: .3s ease;
+
+    /* ==========================
+    LAYOUT
+    ========================== */
+
+    --container-width: 1500px;
+    --sidebar-width: 320px;
+
+}

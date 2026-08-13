@@ -1,0 +1,101 @@
+.comparacao-historica {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    overflow: hidden;
+
+    .imagens {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        
+        .imagem-atual {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            
+        }
+    
+        .imagem-antiga {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: 2;
+            clip-path: inset(0 50% 0 0);
+            
+        }
+    }
+
+    .divisor {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        left: 50%;
+        width: 2px;
+        z-index: 5;
+        background: rgb(255, 255, 255, 0.7);
+        
+
+        .range_Ball {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 30px;
+            height: 30px;
+            border: 2px solid rgb(255, 255, 255, 0.7);
+            border-radius: 50%;
+            background-color: rgb(255, 255, 255, 0.7);
+            transform: translate(-50%, -50%);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            
+            
+
+            .setas {
+                width: 90%;
+                height: 50%;
+                display: flex;
+                align-items: center;
+                
+                gap: .8rem;
+                
+                
+                .left {
+                    transform: rotate(180deg);
+                    
+                }
+                img {
+                    width: 5px;
+                    height: 5px;
+
+                    
+                }
+            }
+        }
+    }
+
+    .controle-comparacao {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 10;
+        opacity: 0;
+        cursor: ew-resize;
+        
+    }
+    
+}
+

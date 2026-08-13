@@ -1,0 +1,126 @@
+.ondeEsta {
+    width: 100%;
+    border: 1px solid var(--border-color);
+    padding: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    
+    .ondeEsta_localMap {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        
+        .ondeEsta_subtitle {
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            gap: .3rem;
+            color: var(--font-text);
+
+            img {
+                width: 25px;
+                height: 25px;
+            }
+            h3 {
+
+            }
+        }
+        iframe {
+            width: 100%;
+            height: 100%;
+            background-color: brown;
+
+        }
+    }
+    .ondeEsta_infos {
+        ul {
+        font-family: var(--font-text);
+        font-size: var(--fs-small);
+        color: var(--font-text);
+        
+            li {
+                width: 100%;
+                display: flex;
+                align-items: center;
+                gap: .2rem;
+                padding: 0.4rem;
+
+                img {
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+
+    }
+
+    .ondeEsta_dadosMunicipio {
+        background-color: var(--bg-main);
+        width: 100%;
+        height: 100%;
+        background-color: var(--bg-main);
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        padding: 1rem;
+        border-radius: var(--radius-md);
+        
+        ul {
+            
+            .ondeEsta_dado {
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                gap: .1rem;
+                margin: 0.5rem;
+
+                .linha_dado {
+                    display: flex;
+                    justify-content: space-between;
+                }
+                
+                .barra_evolucao {
+                    width: 100%;
+                    height: 7px;
+                    background-color: var(--color-primary);
+                    border-radius: 5px;
+
+                }
+            }
+        }
+    }
+}
+
+/*  Responsive */
+
+@media(min-width: 1145px) {
+    .ondeEsta {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        padding: 1rem;
+        
+        .ondeEsta_localMap {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            .ondeEsta_subtitle {
+                
+            }
+        }
+    }
+    .ondeEsta_infos {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        ul {
+            
+            li {
+                
+            
+                
+            }
+        }
+    }
+}

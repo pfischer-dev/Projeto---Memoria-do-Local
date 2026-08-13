@@ -1,0 +1,86 @@
+.history {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: .2rem;
+    border: 1px solid var(--border-color);
+    border-right: 0;
+
+    .history_title {
+        display: flex;
+        gap: .5rem;
+        padding: 1rem;
+        
+        img {
+            width: 30px;
+            height: 30px;
+        }
+        h3 {
+
+
+        }
+    }
+    .history_leftCard {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+        gap: .5rem;
+        order: 1;
+        
+
+        
+        .history_description {
+            padding: 1rem;
+            font-size: var(--fs-small);
+            
+        }
+        .history_leiaMais {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: .5rem;
+            padding: 1rem;
+            
+            
+            h4 {
+                font-size: var(--fs-small);
+            }
+            img {
+                width: 20px;
+                height: 20px;
+            }
+        }
+    }
+
+    .history_rightCard {
+        display: flex;
+        align-items: center;
+        order: 2;
+        
+        img {
+            padding: 1rem;
+            border-radius: var(--radius-xl);
+        }
+    }
+
+}
+
+@media(min-width: 1000px ) {
+    .history {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0.5rem;
+        .history_title {
+            display: flex;
+            
+        }
+        .history_leftCard {
+            
+        }
+
+        .history_rightCard {
+            
+        }
+    }
+}

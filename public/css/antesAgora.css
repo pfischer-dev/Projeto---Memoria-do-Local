@@ -1,0 +1,105 @@
+.antesAgora {
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    border-right: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    width: 100%;
+
+    
+
+    .antesAgora_title {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: .5rem;
+        img {
+            width: 30px;
+            height: 30px;
+
+        }
+        h3 {
+
+        }
+    }
+    .antesAgora_cards {
+        padding: 1rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        
+        
+        .antesAgora_leftCard {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            
+            
+
+            figcaption {
+                padding: 0 0.5rem;
+            }
+            
+        }
+
+        .antesAgora_rightCard {
+            padding: 1rem;
+            margin-top: 0;
+            border: 1px solid gray;
+            border-radius: var(--radius-lg);
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            box-shadow: var(--shadow-lg);
+            /* grid-column: 2; */
+
+            .curiosidade_title {
+                display: flex;
+                align-items: center;
+                
+                gap: 0.5rem;
+                img {
+                    width: 30px;
+                    height: 30px;
+                    
+                }
+
+            }
+            .curiosidade_description {
+
+            }
+
+            .curiosidade_verMais {
+                display: flex;
+                gap: .5rem;
+                
+                img {
+                    width: 30px;
+                    height: 30px;
+                }
+
+            }
+
+        }
+    }
+}
+
+/* Resposive */
+
+@media(min-width: 1000px) {
+    .antesAgora {
+
+        .antesAgora_cards {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+
+            .antesAgora_rightCard {
+                height: 95%;
+                justify-content: space-between;
+            }
+        }
+    }
+}

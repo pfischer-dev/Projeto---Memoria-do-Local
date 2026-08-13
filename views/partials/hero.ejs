@@ -1,0 +1,37 @@
+<% if(locals.error) { %>
+    <%= error %>
+<% } else { %>
+    <% if(localHistorico) { %>
+        <section class="hero">
+            <div class="left_hero">
+                <div class="titleSubtitle">
+                    <h1><%= localHistorico.identificacao.nome || localHistorico.endereco.rua %></h1>
+                    <h3><%= localHistorico.endereco.estado %> - <%= localHistorico.endereco.pais %> </h3>
+                </div>
+                <div class="line"></div>
+                <p class="hero_description"><%= localHistorico.historia?.descricao %></p>
+
+                <div class="hero_buttons">
+                    <div class="verNoMapa">
+                        <img src="/images/icons/location.png" alt="">
+                        <h6>Ver no Mapa</h6>
+                    </div>
+                    <div class="favoritos">
+                        <img src="/images/icons/heart.png" alt="coração favoritos">
+                        <h6>Adicionar aos Favoritos</h6>
+                    </div>
+                </div>
+            </div>
+
+            <div class="right_hero">
+                <% if(localHistorico && localHistorico.imagens.imagem) { %>
+                    <img src="<%= localHistorico.imagens.imagem %>" alt="Foto de ">
+                <% } %>
+            </div>
+        </section>
+    <% } %>
+<% } %>
+
+
+
+

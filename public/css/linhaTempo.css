@@ -1,0 +1,90 @@
+.linhaTempo {
+    width: 100%;
+    padding: 1rem;
+    border: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    justify-content: center;
+    align-items: start;
+    overflow-x: auto;
+    overflow-y: hidden;
+    .linhaTempo_title {
+        display: flex;
+        gap: .5rem;
+        display: flex;
+        h3 {
+
+        }
+        img {
+            width: 30px;
+        }
+    }
+
+    .miniTime {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: .5rem 0;
+        
+        .linhaTempo_icons {
+            display: flex;
+            gap: 4rem;
+            width: max-content;
+            .linhaTempo_fundacao,
+            .linhaTempo_independencia,
+            .linhaTempo_fatoHistorico1,
+            .linhaTempo_fatoHistorico2,
+            .linhaTempo_expansao,
+            .linhaTempo_hoje {
+                flex: 0 0 80px;
+                position: relative;
+            }
+            
+            & > div:not(:last-child)::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                left: 80px;
+                width: 4rem;
+                height: 1px;
+                background-color: var(--color-secondary);
+                z-index: 1;
+            }
+    
+            .circle {
+                border: 1px solid var(--color-secondary);
+                width: 80px;
+                height: 80px;
+                border-radius: 50%;
+                background: var(--bg-main);
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                gap: 1rem;
+                z-index: 2;
+                img {
+                    width: auto;
+                    height: 50px;
+                    object-fit: contain;
+                }
+            }
+            .linhaTempo_fundacao img {
+                transform: translateX(8px);
+            }
+        }
+    }
+    
+    .linhaTempo_conjuntoDados {
+        display: flex;
+        gap: 4.4rem;
+        .dados {
+            text-align: center;
+
+        }
+    }
+    
+}

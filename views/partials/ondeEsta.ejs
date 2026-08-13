@@ -1,0 +1,98 @@
+<% if (locals.error) { %>
+    <%= error %>
+<% } else { %>
+    <% if(localHistorico) { %>
+        <section class="ondeEsta">
+            <!-- MAPA Onde ESTA -->
+            <div class="ondeEsta_localMap">
+                <div class="ondeEsta_subtitle">
+                    <img src="/images/icons/location2.png" alt="localização">
+                    <h3>Onde Está</h3>
+                </div>
+                <iframe src="" frameborder="0"></iframe>
+            </div>
+
+            <!-- INFOS -->
+            <div class="ondeEsta_infos">
+                <ul>
+                    <li>
+                        <img src="/images/icons/location2.png" alt="localização">
+                        <h4>Bairro: </h4><p><%= localHistorico.endereco.bairro %></p>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <img src="images/icons/location2.png" alt="">
+                        <h4>Município: </h4> <p><%= localHistorico.endereco.cidade %></p>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <img src="/images/icons/location2.png" alt="">
+                        <h4>Estado: </h4> <p><%= localHistorico.endereco.estado %></p>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <img src="/images/icons/government.png" alt="">
+                        <h4>Fundação da Cidade: </h4><p>[DADO IBGE]<%=  %></p>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <img src="/images/icons/group.png" alt="">
+                        <h4>População: </h4><p>[DADO IBGE]<%=  %></p>
+                    </li>
+                </ul>
+                <ul>
+                    <li>
+                        <img src="/images/icons/maximize.png" alt="">
+                        <h4>Área: </h4><p>[DADO IBGE]<%=  %></p>
+                    </li>
+                </ul>
+            </div>
+
+            <!-- Dados Municipio -->
+            <div class="ondeEsta_dadosMunicipio">
+                <h3>Dados do Município</h3>
+                <ul>
+                    <li class="ondeEsta_dado">
+                        <div class="linha_dado">
+                            <p>IDH</p>
+                            <p class="resultado_DadosMunicipio">99999999</p>
+                        </div>
+                        
+                        <div class="barra_evolucao"></div>
+                    </li>
+
+                    <li class="ondeEsta_dado">
+                        <div class="linha_dado">
+                            <p>PIB Per Capita</p>
+                            <p class="resultado_DadosMunicipio">99999999</p>
+                        </div>
+                        <div class="barra_evolucao"></div>
+                    </li>
+
+                    <li class="ondeEsta_dado">
+                        <div class="linha_dado">
+                            <p>Área Territorial</p>
+                            <p class="resultado_DadosMunicipio">99999999</p>
+                        </div>
+    
+                        <div class="barra_evolucao"></div>
+                    </li>
+
+                    <li class="ondeEsta_dado">
+                        <div class="linha_dado">
+                            <p>Gentílico</p>
+                            <p class="resultado_DadosMunicipio">99999999</p>
+                        </div>
+                        <div class="barra_evolucao"></div>
+                    </li>
+
+                </ul>
+            </div>
+        </section>
+    <% } %>
+<% } %>
+

@@ -1,0 +1,49 @@
+@import url("./variables.css");
+@import url("./reset.css");
+@import url("./header.css");
+@import url("./ondeEsta.css");
+@import url("./history.css");
+@import url("./linhaTempo.css");
+@import url("./antesAgora.css");
+@import url("./comparacaoHistorica.css");
+@import url("./patrimonioHistorico.css");
+@import url("./sidebar.css");
+@import url("./search.css");
+@import url("./timeline.css");
+@import url("./hero.css");
+@import url("./footer.css");
+
+main {
+    width: 100vw;
+    .container {
+        display: flex;
+        flex-direction: column;
+        .side {
+            
+        }
+
+        .layout {
+            /* width: 100%; */
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}
+
+/* Responsive INDEX.EJS  DESKTOP */
+@media(min-width: 724px) {
+    main {
+        .container {
+            flex-direction: row;
+            .side {
+                /* width: 50%; */
+            }
+            
+            .layout {
+                
+            }
+        }
+    }
+}
+
+
