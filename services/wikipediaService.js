@@ -12,7 +12,8 @@ export async function consultarWikipedia(yourSearch) {
                 list: "search",
                 srsearch: yourSearch,
                 addressdetails: 1,
-                limit: 1,
+                srlimit: 5,
+                srnamespace: 0,
                 format: "json"
             },
     }

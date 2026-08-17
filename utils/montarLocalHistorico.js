@@ -1,3 +1,5 @@
+/* Funcao destinada a receber os dados vindos das APIs e add a um objeto e separo todos eles dentro de um objeto unico, o localHistorico */
+
 export function montarLocalHistorico(dados) {
     const localHistorico = {
         consulta: {},
@@ -53,7 +55,6 @@ export function montarLocalHistorico(dados) {
             estado: dados.nominatim.address.state,
             pais: dados.nominatim.address.country,
             cep: dados.nominatim.address.postcode,
-            
         }
 
         localHistorico.mapas = {

@@ -1,3 +1,4 @@
+/* Funcao para unir os dados recebidos do nominatim para ser utilizado na proxima pesquisa do wikipedia */
 export function criarConsultaGeografica(endereco) {
     console.log(endereco);
     

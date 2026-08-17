@@ -68,6 +68,7 @@ app.get("/consulta", async (req, res) => {
         
         case "TEXTO":
             try {
+                /* chamada API Nominatim */
                 const resultadoNominatim = await consultarNominatim(yourSearch);
                 console.log(`Saida Nominatim:`);
                 console.log(resultadoNominatim);
@@ -93,7 +94,19 @@ app.get("/consulta", async (req, res) => {
                 console.log(`resultado consulta texto:`);
                 console.log(consultaTexto);
 
+                /* Chamada API ViaCEP */
+                const enderecoViaCEP = await consultarViaCep(resultadoNominatim.address?.postcode);
+                console.log(`Saída ViaCep:`);
+                console.log(enderecoViaCEP);
 
+                if(!enderecoViaCEP) {
+                    return res.render("index.ejs", {
+                        localHistorico: null,
+                        error: `Endereço de Cep não encontrado`
+                    });
+                }
+                
+                /* chamada API Wiki */
                 const resultadoWiki = await consultarWikipedia(consultaTexto);
                 console.log(`Saída Wiki:`);
                 console.log(resultadoWiki);
@@ -110,6 +123,7 @@ app.get("/consulta", async (req, res) => {
                         tipoPesquisa: tipo,
                         pesquisadoEm: new Date()
                     },
+                    viaCep: enderecoViaCEP,
                     wikipedia: resultadoWiki,
                     nominatim: resultadoNominatim
                 });
@@ -132,7 +146,7 @@ app.get("/consulta", async (req, res) => {
             break;
     }
 });
-/* teste */
+
 app.listen(port, () => {
     console.log(`Listenning on port ${port}`);
 });
