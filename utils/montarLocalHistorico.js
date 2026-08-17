@@ -74,7 +74,5 @@ export function montarLocalHistorico(dados) {
         localHistorico.fontes.pagina = dados.wikipedia.content_urls?.desktop?.page;
         localHistorico.apisConsultadas.wikipedia = true;
     }
-    console.log(`Meu Objeto:`);
-    console.log(localHistorico)
     return localHistorico; 
 }

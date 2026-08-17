@@ -1,3 +1,4 @@
+/* funcao que faz a primeira pesquisa no wiki e em seguida pega esta pesquisa e cria uma pesqiisa via titulo (summary) */
 import axios from "axios";
 const SEARCH_API_URL = "https://pt.wikipedia.org/w/api";
 const SUMMARY_API = "https://pt.wikipedia.org/api/rest_v1/page/summary";
@@ -31,5 +32,4 @@ export async function consultarWikipedia(yourSearch) {
         throw error;
     }
 }
-
     

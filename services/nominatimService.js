@@ -1,3 +1,4 @@
+/* funcao que faz a pequisa no nominatim e retorna seu valor */
 import axios from "axios";
 
 export async function consultarNominatim(dados) {

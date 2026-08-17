@@ -1,3 +1,4 @@
+/* funcao usada para tratar o codigo postal deixando ele sem traços ou espaços */
 import axios from "axios";
 
 export async function consultarViaCep(yourSearch) {
@@ -5,8 +6,7 @@ export async function consultarViaCep(yourSearch) {
     const viaCEP_API = `https://viacep.com.br/ws/${yourSearchFormatted}/json/`;
     try {
         const pesquisaViaCep = await axios.get(`${viaCEP_API}`);
-        /* console.log(pesquisaViaCep.data); */
-        
+
         if(pesquisaViaCep.data.erro === true) {
             return null;
         }
