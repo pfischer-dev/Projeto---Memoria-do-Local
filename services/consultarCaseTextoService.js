@@ -26,10 +26,11 @@ export async function consultarCaseTexto(yourSearch) {
         resultadoNominatim.address?.city ?? resultadoNominatim.address?.municipality
     });
     
-    const enderecoViaCEP = await consultarViaCep(resultadoNominatim.address?.postcode);
-    console.log(`Saida ViaCEP:`, enderecoViaCEP);
-    if(!enderecoViaCEP) {
-        return null;
+    let enderecoViaCEP = null;
+    const cep = resultadoNominatim.address?.postcode;
+    if(cep) {
+        enderecoViaCEP = await consultarViaCep(cep);
+        console.log(`Saida ViaCEP:`, enderecoViaCEP);
     }
     
     const resultadoWiki = await consultarWikipedia(consultaTexto);

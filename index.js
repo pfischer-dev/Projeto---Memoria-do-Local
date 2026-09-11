@@ -3,11 +3,8 @@ import { identificarPesquisa } from "./utils/identificarPesquisa.js";
 import { consultarCaseTexto } from "./services/consultarCaseTextoService.js";
 import { consultarCaseCep } from "./services/consultarCaseCepService.js";
 
-
-
 const app = express();
 const port = 3000;
-
 
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("public"));

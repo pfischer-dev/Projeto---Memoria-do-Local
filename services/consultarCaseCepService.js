@@ -20,6 +20,7 @@ export async function consultarCaseCep(yourSearch, tipo) {
     console.log(`Saída Wiki: `, artigoWikipedia);
     
     
+    
     const localHistorico = montarLocalHistorico({
         consulta: {
             termoOriginal: yourSearch,

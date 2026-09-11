@@ -23,6 +23,7 @@ export async function consultarWikipedia(yourSearch) {
         if(pesquisa.data.query.search.length === 0) {
             return null;
         }
+        
         const titulo = pesquisa.data.query.search[0].title;
         const summaryWikipedia = await axios.get(`${SUMMARY_API}/${titulo}`, config)
         return summaryWikipedia.data;
