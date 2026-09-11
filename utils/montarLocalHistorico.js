@@ -74,5 +74,32 @@ export function montarLocalHistorico(dados) {
         localHistorico.fontes.pagina = dados.wikipedia.content_urls?.desktop?.page;
         localHistorico.apisConsultadas.wikipedia = true;
     }
+    
+    if(dados.ibge) {
+        const codigoPibMun =  dados.ibge?.data.find(pib => pib.id === 47001);
+        const pibMunicipal = codigoPibMun?.res?.[0]?.res;
+        
+        const codigoTerritorial = dados.ibge?.data.find(area => area.id === 29167);
+        const areaTerritorial = codigoTerritorial?.res?.[0]?.res;
+
+        const codigoDensidade = dados.ibge?.data.find(densidade => densidade.id === 29168);
+        const densidadeDemo = codigoDensidade?.res?.[0]?.res;
+
+        if(pibMunicipal) {
+            const anos = Object.keys(pibMunicipal);
+            const ultimo = anos[anos.length - 1];
+            localHistorico.geografia.pibPerCapitaMunicipal = pibMunicipal[ultimo];
+        }
+        if(areaTerritorial) {
+            localHistorico.geografia.areaTerritorial = areaTerritorial[0];
+        }
+        if(densidadeDemo) {
+            const anos = Object.keys(densidadeDemo);
+            const ultimo = anos[anos.length - 1 ];
+            localHistorico.geografia.densidadeDemografica = densidadeDemo[ultimo];
+        }
+        localHistorico.apisConsultadas.ibge = true;
+    }
+    
     return localHistorico; 
 }
