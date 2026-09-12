@@ -21,8 +21,7 @@ export async function consultarCaseCep(yourSearch, tipo) {
     console.log(`Saída Wiki: `, artigoWikipedia);
     
     const dadosIbge = await buscarDadosIBGE(enderecoViaCEP.ibge);
-    const pibPerCapitaMunicipal = dadosIbge.data[1].res;
-    console.log(`Saída IBGE: `, dadosIbge.data[1].res);
+    console.log(`Saída IBGE(caseCEP): `, dadosIbge.indicadoresIBGE.data);
     
     const localHistorico = montarLocalHistorico({
         consulta: {

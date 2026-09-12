@@ -4,17 +4,29 @@ import axios from "axios";
 
 export async function buscarDadosIBGE(codigoIbge) {
     const urlIndicadores = `https://servicodados.ibge.gov.br/api/v1/pesquisas/indicadores/29168|47001|29167/resultados/${codigoIbge}`;
+    const urlPopulacaoMunicipal = `https://apisidra.ibge.gov.br/values/t/4709/v/93/p/2022/n6/${codigoIbge}`
     const config = {
         headers: {
             "User-Agent": "ConsultaHistorica/1.0 (contato: paulofischer.dev@gmail.com)"    
         }
     }    
+
     try {
-        const resultadoIBGE = await axios.get(urlIndicadores, config);
-        if(!resultadoIBGE) {
+        const [indicadoresIBGE, populacaoMunicipalSidra] = await Promise.all([
+            await axios.get(urlIndicadores, config),
+            await axios.get(urlPopulacaoMunicipal, config)
+        ]);
+
+    
+        if(!indicadoresIBGE || !indicadoresIBGE.data) {
             return null;
         }
-        return resultadoIBGE;
+        if (!populacaoMunicipalSidra || !populacaoMunicipalSidra.data) {
+            return null;
+        }
+        console.log("Indicadores:", indicadoresIBGE.data);
+        console.log("SIDRA:", populacaoMunicipalSidra.data);
+        return { indicadoresIBGE, populacaoMunicipalSidra };
         
     } catch (error) {
         console.log(error.message);
