@@ -117,6 +117,7 @@ export function montarLocalHistorico(dados) {
         }
         if(dadoGentilico) {
             localHistorico.geografia.gentilico = dadoGentilico.data[dados.viaCep.ibge].GENTILICO;
+            localHistorico.historia.resumoCidade = dadoGentilico.data[dados.viaCep.ibge].HISTORICO
         }
 
 

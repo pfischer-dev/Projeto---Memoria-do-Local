@@ -20,8 +20,8 @@ export async function buscarDadosIBGE(codigoIbge) {
             await axios.get(urlPopulacaoMunicipal, config),
             await axios.get(urlGentilico, config)
         ]);
-
-        console.log(`gentilico:`, gentilico.data[codigoIbge].GENTILICO);
+        console.log(`gentilico:`, gentilico.data[codigoIbge].HISTORICO);
+        /* console.log(`gentilico:`, gentilico.data[codigoIbge].GENTILICO); */
         
         if(!indicadoresIBGE || !indicadoresIBGE.data) {
             return null;
