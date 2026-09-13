@@ -87,6 +87,12 @@ export function montarLocalHistorico(dados) {
         const codigoDensidade = dados.ibge?.indicadoresIBGE?.data.find(densidade => densidade.id === 29168);
         const densidadeDemo = codigoDensidade?.res?.[0]?.res;
         /* */
+        if(populacaoMunicipal){
+            let valorPop = parseInt(populacaoMunicipal)
+            localHistorico.geografia.populacaoMunicipal = !isNaN(valorPop)
+            ? valorPop.toLocaleString("pt-BR")
+            : null
+        }
         
         if(pibMunicipal) {
             const anos = Object.keys(pibMunicipal);
@@ -110,12 +116,7 @@ export function montarLocalHistorico(dados) {
             const ultimo = anos[anos.length - 1 ];
             localHistorico.geografia.densidadeDemografica = densidadeDemo[ultimo];
         }
-        if(populacaoMunicipal){
-            let valorPop = parseInt(populacaoMunicipal)
-            localHistorico.geografia.populacaoMunicipal = !isNaN(valorPop)
-            ? valorPop.toLocaleString("pt-BR")
-            : null
-        }
+        
 
 
         localHistorico.apisConsultadas.ibge = true;
