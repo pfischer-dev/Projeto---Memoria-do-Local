@@ -5,6 +5,9 @@ import axios from "axios";
 export async function buscarDadosIBGE(codigoIbge) {
     const urlIndicadores = `https://servicodados.ibge.gov.br/api/v1/pesquisas/indicadores/29168|47001|29167/resultados/${codigoIbge}`;
     const urlPopulacaoMunicipal = `https://apisidra.ibge.gov.br/values/t/4709/v/93/p/2022/n6/${codigoIbge}`
+    
+    const urlGentilico = `https://servicodados.ibge.gov.br/api/v1/biblioteca?aspas=3&codmun=${codigoIbge}`
+    
     const config = {
         headers: {
             "User-Agent": "ConsultaHistorica/1.0 (contato: paulofischer.dev@gmail.com)"    
@@ -12,21 +15,27 @@ export async function buscarDadosIBGE(codigoIbge) {
     }    
 
     try {
-        const [indicadoresIBGE, populacaoMunicipalSidra] = await Promise.all([
+        const [indicadoresIBGE, populacaoMunicipalSidra, gentilico] = await Promise.all([
             await axios.get(urlIndicadores, config),
-            await axios.get(urlPopulacaoMunicipal, config)
+            await axios.get(urlPopulacaoMunicipal, config),
+            await axios.get(urlGentilico, config)
         ]);
 
-    
+        console.log(`gentilico:`, gentilico.data[codigoIbge].GENTILICO);
+        
         if(!indicadoresIBGE || !indicadoresIBGE.data) {
             return null;
         }
         if (!populacaoMunicipalSidra || !populacaoMunicipalSidra.data) {
             return null;
         }
+        if(!gentilico){
+            return null;
+        }
+
         console.log("Indicadores:", indicadoresIBGE.data);
         console.log("SIDRA:", populacaoMunicipalSidra.data);
-        return { indicadoresIBGE, populacaoMunicipalSidra };
+        return { indicadoresIBGE, populacaoMunicipalSidra, gentilico };
         
     } catch (error) {
         console.log(error.message);

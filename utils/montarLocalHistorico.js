@@ -30,6 +30,7 @@ export function montarLocalHistorico(dados) {
         localHistorico.endereco.uf = dados.viaCep?.uf;
         localHistorico.endereco.regiao = dados.viaCep?.regiao;
         localHistorico.endereco.ibge = dados.viaCep?.ibge;
+        localHistorico.endereco.cep = dados.viaCep?.cep;
         localHistorico.apisConsultadas.viaCep = true;
     }
     if(dados.nominatim) {
@@ -47,16 +48,10 @@ export function montarLocalHistorico(dados) {
             enderecoTipo: dados.nominatim.addresstype,
             enderecoPostal: dados.nominatim.address?.postcode
         },
-        localHistorico.endereco = { 
-            nome: dados.nominatim.name,
-            rua: dados.nominatim.address.road,
-            bairro: dados.nominatim.address.suburb,
-            cidade: dados.nominatim.address.city,
-            estado: dados.nominatim.address.state,
-            pais: dados.nominatim.address.country,
-            cep: dados.nominatim.address.postcode,
-        }
-
+        localHistorico.endereco.nome = dados.nominatim.name,
+        localHistorico.endereco.estado = dados.nominatim.address.state,
+        localHistorico.endereco.pais = dados.nominatim.address.country,
+    
         localHistorico.mapas = {
             latitude: dados.nominatim.lat,
             longitude: dados.nominatim.lon,
@@ -86,6 +81,10 @@ export function montarLocalHistorico(dados) {
 
         const codigoDensidade = dados.ibge?.indicadoresIBGE?.data.find(densidade => densidade.id === 29168);
         const densidadeDemo = codigoDensidade?.res?.[0]?.res;
+
+        const dadoGentilico = dados.ibge.gentilico;
+        
+        
         /* */
         if(populacaoMunicipal){
             let valorPop = parseInt(populacaoMunicipal)
@@ -93,7 +92,7 @@ export function montarLocalHistorico(dados) {
             ? valorPop.toLocaleString("pt-BR")
             : null
         }
-        
+
         if(pibMunicipal) {
             const anos = Object.keys(pibMunicipal);
             const ultimo = anos[anos.length - 1];
@@ -116,11 +115,12 @@ export function montarLocalHistorico(dados) {
             const ultimo = anos[anos.length - 1 ];
             localHistorico.geografia.densidadeDemografica = densidadeDemo[ultimo];
         }
-        
+        if(dadoGentilico) {
+            localHistorico.geografia.gentilico = dadoGentilico.data[dados.viaCep.ibge].GENTILICO;
+        }
 
 
         localHistorico.apisConsultadas.ibge = true;
     }
-    
     return localHistorico; 
 }
