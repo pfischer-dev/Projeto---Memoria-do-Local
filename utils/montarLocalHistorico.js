@@ -91,12 +91,19 @@ export function montarLocalHistorico(dados) {
         if(pibMunicipal) {
             const anos = Object.keys(pibMunicipal);
             const ultimo = anos[anos.length - 1];
-            localHistorico.geografia.pibPerCapitaMunicipal = pibMunicipal[ultimo];
+            localHistorico.geografia.pibPerCapitaMunicipal = Number(pibMunicipal[ultimo]).toLocaleString("pt-BR", {
+                style: "currency",
+                currency: "BRL",
+            });
         }
         if(areaTerritorial) {
             const anos = Object.keys(areaTerritorial);
             const ultimo = anos[anos.length - 1];
-            localHistorico.geografia.areaTerritorial = areaTerritorial[ultimo];
+            /*  */
+            let valorArea = parseFloat(areaTerritorial[ultimo]);
+            localHistorico.geografia.areaTerritorial = !isNaN(valorArea)
+            ? valorArea.toLocaleString("pt-BR", { minimumFractionDigits:2, maximumFractionDigits: 2 })
+            : null;
         }
         if(densidadeDemo) {
             const anos = Object.keys(densidadeDemo);
@@ -104,7 +111,10 @@ export function montarLocalHistorico(dados) {
             localHistorico.geografia.densidadeDemografica = densidadeDemo[ultimo];
         }
         if(populacaoMunicipal){
-            localHistorico.geografia.populacaoMunicipal = populacaoMunicipal;
+            let valorPop = parseInt(populacaoMunicipal)
+            localHistorico.geografia.populacaoMunicipal = !isNaN(valorPop)
+            ? valorPop.toLocaleString("pt-BR")
+            : null
         }
 
 

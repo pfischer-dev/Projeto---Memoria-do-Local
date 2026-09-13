@@ -41,13 +41,13 @@
                 <ul>
                     <li>
                         <img src="/images/icons/group.png" alt="">
-                        <h4>População: </h4><p>[DADO IBGE]<%=  %></p>
+                        <h4>População: </h4><p><%= localHistorico.geografia.populacaoMunicipal %> habitantes</p>
                     </li>
                 </ul>
                 <ul>
                     <li>
                         <img src="/images/icons/maximize.png" alt="">
-                        <h4>Área: </h4><p>[DADO IBGE]<%=  %></p>
+                        <h4>Área: </h4><p><%= localHistorico.geografia.areaTerritorial %> km²</p>
                     </li>
                 </ul>
             </div>
@@ -68,7 +68,7 @@
                     <li class="ondeEsta_dado">
                         <div class="linha_dado">
                             <p>PIB Per Capita</p>
-                            <p class="resultado_DadosMunicipio">99999999</p>
+                            <p class="resultado_DadosMunicipio"><%= localHistorico.geografia.pibPerCapitaMunicipal %></p>
                         </div>
                         <div class="barra_evolucao"></div>
                     </li>
@@ -76,7 +76,7 @@
                     <li class="ondeEsta_dado">
                         <div class="linha_dado">
                             <p>Área Territorial</p>
-                            <p class="resultado_DadosMunicipio">99999999</p>
+                            <p class="resultado_DadosMunicipio"><%= localHistorico.geografia.areaTerritorial %> km²</p>
                         </div>
     
                         <div class="barra_evolucao"></div>
